@@ -1,0 +1,29 @@
+[
+    {
+      "donorId": "D001",
+      "name": "John Doe",
+      "address": {
+        "city": "New York",
+        "state": "NY",
+        "street": "123 Main St",
+        "landmark": "Near Central Park",
+        "addressLine1": "Apt 4B",
+        "addressLine2": ""
+      },
+      "phoneNumber": "123-456-7890"
+    },
+    {
+      "donorId": "D002",
+      "name": "Jane Smith",
+      "address": {
+        "city": "San Francisco",
+        "state": "CA",
+        "street": "456 Market St",
+        "landmark": "Next to Union Square",
+        "addressLine1": "Suite 300",
+        "addressLine2": ""
+      },
+      "phoneNumber": "987-654-3210"
+    }
+  ]
+  

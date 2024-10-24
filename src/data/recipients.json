@@ -1,0 +1,29 @@
+[
+    {
+      "recipientId": "R001",
+      "name": "ABC Shelter",
+      "address": {
+        "city": "Los Angeles",
+        "state": "CA",
+        "street": "789 Sunset Blvd",
+        "landmark": "Across from the mall",
+        "addressLine1": "Unit 12",
+        "addressLine2": ""
+      },
+      "phoneNumber": "555-123-4567"
+    },
+    {
+      "recipientId": "R002",
+      "name": "XYZ Community Center",
+      "address": {
+        "city": "Chicago",
+        "state": "IL",
+        "street": "321 Lakeshore Drive",
+        "landmark": "Near Millennium Park",
+        "addressLine1": "Building 2",
+        "addressLine2": ""
+      },
+      "phoneNumber": "555-987-6543"
+    }
+  ]
+  
