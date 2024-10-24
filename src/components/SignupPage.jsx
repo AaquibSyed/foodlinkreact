@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import dataService from "../services/dataService";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +18,7 @@ function SignupPage() {
   const handleSignup = async (e) => {
     e.preventDefault();
     const newUser = { name, address, phone };
-    await dataService.signup(newUser, "donor"); // 'donor' or 'receiver'
+    await dataService.signup(newUser, "donor");
     navigate("/");
   };
 
