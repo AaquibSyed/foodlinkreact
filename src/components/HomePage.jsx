@@ -11,12 +11,12 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <h2>Select Your Role</h2>
+      <h1 className="selectHeading">Select Your Role</h1>
       <div className="icon-container">
-        <div className="role-icon" onClick={() => handleUserTypeSelection("donor")}>
+        <div className="role-icon donor" onClick={() => handleUserTypeSelection("donor")}>
           <h3>Donor</h3>
         </div>
-        <div className="role-icon" onClick={() => handleUserTypeSelection("recipient")}>
+        <div className="role-icon recipient" onClick={() => handleUserTypeSelection("recipient")}>
           <h3>Recipient</h3>
         </div>
       </div>
