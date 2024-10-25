@@ -1,18 +1,24 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import authService from "../services/authService";
 
 function LoginPage() {
-  const [donorId, setDonorId] = useState("");
+  const { state } = useLocation();
+  const [userType, setUserType] = useState(state?.userType || 'donor');
+  const [Id, setId] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setUserType(state?.userType || 'donor');
+  }, [state]);
+
+
   const handleLogin = async (e) => {
-    e.PreventDefault();
-    const isAuthenticated = await authService.login(donorId, password);
+    const isAuthenticated = await authService.login(Id, password, userType);
 
     if (isAuthenticated) {
-      navigate("/donor-dashboard");
+      navigate(`/${userType}-dashboard`);
     } else {
       alert("Invalid credentials");
     }
@@ -20,13 +26,13 @@ function LoginPage() {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>{userType === 'donor' ? 'Donor' : 'Recipient'} Login</h2>
       <form onSubmit={handleLogin}>
         <input
           type="text"
-          placeholder="Donor ID"
-          value={donorId}
-          onChange={(e) => setDonorId(e.target.value)}
+          placeholder={`${userType === 'donor' ? 'Donor' : 'Recipient'} ID`}
+          value={Id}
+          onChange={(e) => setId(e.target.value)}
           required
         />
         <input
